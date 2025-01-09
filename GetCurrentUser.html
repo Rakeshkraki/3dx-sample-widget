@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+	<title>DSIS Sample Widget Get Data</title>
+
+	<meta name="author" content="DSIS" />
+	<meta name="description" content="DSIS Sample Widget WAFData for Automatically Fetching Service URL" />
+	<meta name="apiVersion" content="1.0" />
+	<meta name="debugMode" content="true" />
+	<meta name="strictMode" content="false" />
+
+	<!-- Application Preferences -->
+	<widget:preferences>
+		<widget:preference type="text" name="ctx" label="3DSpace Context" defaultValue='' />
+		<widget:preference type="text" name="typeObj" label="Type of Object" defaultValue='Task' />
+	</widget:preferences>
+
+	<!-- Widget files -->
+	<style>
+/* Style for the widget body */
+body {
+  font-family: Arial, sans-serif;
+  
+  overflow-y: scroll;
+}
+
+/* Header style */
+h3 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the unordered list */
+.name-list {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 40%;
+  margin-top: 50px;
+  width: 300px;
+  text-align: center;
+}
+
+.name-list li {
+  background-color: #e9ecef;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.name-list li:hover {
+  background-color: #73a9eb;
+  transform: translateX(10px);
+  cursor: pointer;
+}
+
+	</style>
+	<script type="text/javascript" src="GetCurrentUser.js"></script>
+
+	<script type="text/javascript">
+		function widgetLoading() {
+			if (widget) {
+				executeWidgetCode();
+			} else {
+				console.warn("Defered widget Loading");
+				setTimeout(widgetLoading, 100); //Wait for widget object to be added correctly
+			}
+		}
+		widgetLoading();
+	</script>
+
+</head>
+
+<body>
+	<p>Loading...</p>
+	<div class="dataContainer">Hii</div>
+</body>
+
+</html>
